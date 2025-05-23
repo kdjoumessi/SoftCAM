@@ -22,7 +22,7 @@ data:
     - translation
 
 train:
-  network: resnet50 # bagnet33[33, 17, 9], inception_v4, resnet50, vgg16, densenet121, efficientnet_v2_m, bagnet, retfound ~  available networks are list in networks.yaml 
+  network: resnet50 # vgg16 ~  available networks are list in networks.yaml 
   conv_cls: True #True
   pretrained: true # load weights from pre-trained model training on ImageNet
   checkpoint: null #best_validation_weights_acc.pt #null #best_validation_weights_acc.pt #null # load weights from other pretrained model
@@ -38,7 +38,6 @@ train:
   eval_interval: 1 # the epoch interval of evaluating model on val dataset
   sample_view: false # save and visualize a batch of images on Tensorboard
   sample_view_interval: 100 # the steps interval of saving samples on Tensorboard. Note that frequently saving images will slow down the training speed.
-  last_only: False # only train the classification layer
   pin_memory: true # enables fast data transfer to CUDA-enabled GPUs
   lambda_l1: 0 #.003
   lambda_l2: 0.00004

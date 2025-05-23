@@ -26,20 +26,7 @@ def train(cfg, model, train_dataset, val_dataset, estimator, logger=None):
     save_path = cfg.dset.save_path 
 
     print('train loader size: ', len(train_loader))
-    print('val loader size: ', len(val_loader))
-
-    if cfg.train.last_only:
-        print('\n freeze feature extractor weight \n')
-        for p in model.parameters():
-            p.requires_grad = False
-
-        if cfg.train.network == 'retfound':
-            for p in model.head.parameters():
-                p.requires_grad = True
-        else:
-            for p in model.fc.parameters():
-                p.requires_grad = True
-            
+    print('val loader size: ', len(val_loader))            
     
     # start training
     model.train()

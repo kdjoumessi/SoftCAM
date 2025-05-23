@@ -1,10 +1,10 @@
 # contains the paths to the dataset
 
 Fundus:
-  dset_name: kaggle_512  # kaggle_512, kaggle_224
-  root: "/gpfs01/berens/data/data/DR/Kaggle_DR_resized"
+  dset_name: kaggle_512  
+  root: xxx 
   root_slurm: "/mnt/lustre/work/berens/datasets/"
-  data_dir: kaggle_data_512   # kaggle_data_224, kaggle_data_512
+  data_dir: kaggle_data_512   
   data_dir_slurm: train
   target: "onset1" # onset1, onset2, level
   fname:  "filename"
@@ -21,7 +21,7 @@ Fundus:
 
 RSNA:
   dset_name: RSNA  
-  root: "/gpfs01/berens/data/data/ChestXray_images/RSNA_challenge"
+  root: xx 
   data_dir: "png_images"
   train_csv: './csv_files/RSNA/train.csv' 
   val_csv: './csv_files/RSNA/val.csv'   
@@ -38,7 +38,7 @@ RSNA:
   
 Retinal_OCT:
   dset_name: OCT  
-  root: "/gpfs01/berens/data/data/kermani_oct/CellData"
+  root: xx
   data_dir: "OCT_preprocessed_resized_3_channels_496"
   train_csv: './csv_files/Retinal_OCT/train.csv' 
   val_csv: './csv_files/Retinal_OCT/val.csv'   

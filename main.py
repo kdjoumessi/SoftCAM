@@ -19,26 +19,12 @@ def main():
     cfg, cfg_paths = load_config(args)   
     cfg = data_path(cfg, cfg_paths)
 
-    if cfg.train.network=='retfound':
-        cfg.dset['data_dir'] = 'kaggle_data_224'
-        cfg.data['input_size'] = 224
-        cfg.train.batch_size = 16
-        cfg.train.epochs = 300
-
     if cfg.base.test:
         print('########## test')
         cfg.base.test = True
         cfg.base.sample = 40
         cfg.train.epochs = 4
         cfg.train.batch_size = 2          
-    else:
-        if cfg.base.dataset=='Retinal_OCT':
-            cfg.train.epochs = 30  
-            #cfg.train.batch_size = 12
-    
-        if cfg.train.network == 'efficientnet_v2_m':
-            #if cfg.base.dataset=='RSNA':
-            cfg.train.batch_size = 8
 
     if cfg.base.dataset=='Fundus':
         if not cfg.data.binary:
@@ -109,10 +95,6 @@ def main():
         logger=logger
     )
 
-    ################## test ############
-    ## Manual test 
-    #save_path = './save_models'
-
     name = 'best_validation_weights'
     if cfg.data.binary: # only use for binary task to directly save the performance of the best model on the test set
         model_list = ['acc', 'auc', 'spec', 'sens', 'prec']
@@ -121,7 +103,6 @@ def main():
         model_list = ['acc', 'kappa'] #['acc'] 'loss'
         model_name = ['Accuracy', 'Kappa'] # ['Accuracy'] 'loss'
         
-    #eval_best_models = multi_evaluate if cfg.train.multitask else evaluate 
         
     for i in range(len(model_list)):
         print('========================================')
