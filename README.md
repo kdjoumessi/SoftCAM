@@ -1,5 +1,5 @@
 # Soft-CAM: Making black box models self-explainable for high-stakes decisions
-This repository contains the official implementation of the Self-Explainable CNN-Transformer architecture from the paper ["Soft-CAM: Making black box models self-explainable for high-stakes decisions"](https://github.com/kdjoumessi).
+This repository contains the official implementation of the Self-Explainable CNN-Transformer architecture from the paper ["Soft-CAM: Making black box models self-explainable for high-stakes decisions"](https://github.com/).
 
 ## Model's architecture
 ![Model's architecture](./files/fig1_architecture.png)
