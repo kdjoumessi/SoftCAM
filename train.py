@@ -33,7 +33,7 @@ def train(cfg, model, train_dataset, val_dataset, estimator, logger=None):
 
     max_indicator, max_bin_indicator, max_auc, max_sens, max_spe, max_pre = -1, -1, -1, -1, -1, -1
     min_loss_indicator, kappa_indicator, bin_kappa = 10, -10, 0
-    avg_loss, avg_val_loss, avg_acc, avg_kappa, avg_bin_acc = 0, 0, 0, 0, 0
+    avg_loss, avg_acc, avg_kappa, avg_bin_acc = 0, 0, 0, 0
     train_loss, train_acc, train_kappa, lr, train_bin_acc   = [], [], [], [],[]
     val_loss, val_acc, val_kappa, val_bin_acc = [], [], [], []
     train_auc, train_auprc, train_sens, train_prec, train_spec = [], [], [], [], []
@@ -97,8 +97,6 @@ def train(cfg, model, train_dataset, val_dataset, estimator, logger=None):
                 avg_kappa = estimator.get_kappa(6)
                 progress.set_description('epoch: [{} / {}]| batch [{} / {}] | loss: {:.6f}, acc: {:.4f}, kappa: {:.4f}, bin_acc: {:.4f}'.format(epoch, cfg.train.epochs, step, len(train_loader), avg_loss, avg_acc, avg_kappa, avg_bin_acc) )
         
-        ####################################
-        #################################### add modularity
         # Binary metrics: after a complete epoch
         if cfg.data.binary:
             list_auc, list_auprc, list_others = estimator.get_auc_auprc(6)

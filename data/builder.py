@@ -1,8 +1,7 @@
-import os
-
-from .fundus_transforms import data_transforms
 from .oct_transforms import oct_data_transforms
 from .xchest_transforms import basic_xchest_transform
+from .fundus_transforms import data_transforms, simple_transform
+
 from utils.func import mean_and_std, print_dataset_info
 from .dataset import FundusDataset, RSNADataset, OCTDataset
 
