@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 import random
 
@@ -17,14 +16,7 @@ def main():
     # load conf and paths files
     args = parse_config()
     cfg, cfg_paths = load_config(args)   
-    cfg = data_path(cfg, cfg_paths)
-
-    if cfg.base.test:
-        print('########## test')
-        cfg.base.test = True
-        cfg.base.sample = 40
-        cfg.train.epochs = 4
-        cfg.train.batch_size = 2          
+    cfg = data_path(cfg, cfg_paths)        
 
     if cfg.base.dataset=='Fundus':
         if not cfg.data.binary:

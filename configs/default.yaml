@@ -2,8 +2,6 @@ base:
   dataset: RSNA # in ['Fundus', 'RSNA', Retinal_OCT]
   device: cuda 
   random_seed: 0
-  test: False #True, False
-  sample: 0 # number of samples to consider in the debugging mode
 
 dset:
   save_path: null
