@@ -68,9 +68,9 @@ Models weights and evaluation codes are available upon request
 ## Reference
 ```
 @InProceedings{xxx,
-        author = { xxx, xxx, xxx},
+        author = {Djoumessi, Kerol and Berens, Philipp},
         title = {Soft-CAM: Making black box models self-explainable for medical image analysis},
-        booktitle = {Submitted to xxx},
-        year = {2025}
+        booktitle = {Medical Imaging with Deep Learning},
+        year = {2026}
 }
 ```

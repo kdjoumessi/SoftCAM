@@ -14,6 +14,7 @@ Fundus:
   std: [0.29345420002937317, 0.20033970475196838, 0.15474912524223328] 
   num_classes: 2 # number of classes [2, 5]
   binary: True # [True, False] True => n_classe = 2, False => n_classe = 5
+  threshold: False # False 1 for onset1 and 2 for unset2. to derive the binary metrics~ used in the metrics file
   input_size: 512 
 
 RSNA:
@@ -29,6 +30,7 @@ RSNA:
   std: [0.2458493560552597, 0.2458493560552597, 0.2458493560552597]
   num_classes: 2 # number of classes, default 100 [2, 5]
   binary: True
+  threshold: False # False 1 for onset1 and 2 for unset2. to derive the binary metrics~ used in the metrics file
   input_size: 512
   
   
@@ -45,4 +47,5 @@ Retinal_OCT:
   std: [0.22165445983409882, 0.22165445983409882, 0.22165445983409882]
   num_classes: 2 # number of classes, default 100 [2, 5]
   binary: True
+  threshold: False # False 1 for onset1 and 2 for unset2. to derive the binary metrics~ used in the metrics file
   input_size: 496

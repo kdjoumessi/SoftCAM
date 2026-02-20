@@ -282,7 +282,7 @@ def train(cfg, model, train_dataset, val_dataset, estimator, logger=None):
     print(mess.format(max_indicator, bin_indicator, max_auc, max_spe, max_sens, max_pre, min_loss_indicator)) 
 
 def evaluate(cfg, model, checkpoint, test_dataset, estimator, type_ds):
-    weights = torch.load(checkpoint)
+    weights = torch.load(checkpoint, weights_only=True)
     loss = nn.CrossEntropyLoss()
     
     if isinstance(model, torch.nn.DataParallel):

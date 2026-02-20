@@ -7,7 +7,6 @@ import bagnets.pytorchnet
 from torchvision import models
 from utils.func import print_msg, select_out_features
 from .models import SparseBagnet, FullyConvModel
-from .retfound import ExplainRetFound
 
 def generate_model(cfg):
     out_features = select_out_features(cfg.data.num_classes, cfg.train.criterion)
